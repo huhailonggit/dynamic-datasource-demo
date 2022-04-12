@@ -1,1 +1,23 @@
-
+spring:
+  datasource:
+    dynamic:
+      primary: master #设置默认的数据源，默认值为master
+      strict: false   #是否弃用严格模式，如果启用在味匹配到指定数据源时抛出异常
+      datasource:
+        master:
+          url: jdbc:mysql://192.168.1.110:3306/dynamic1
+          username: root
+          password: hhl@MySQL_1121
+          driverClassName: com.mysql.cj.jdbc.Driver
+#        test:
+#          url: jdbc:mysql://192.168.1.110:3306/dynamic2
+#          username: root
+#          password: hhl@MySQL_1121
+#          driverClassName: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
